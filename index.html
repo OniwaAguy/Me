@@ -1,180 +1,256 @@
 <style>
 html {
-  background-color: #499;
+  box-sizing: border-box;
+}
 
+form {
+  font-family: Arial;
+  padding: 50px;
+  background: #f1f1f1;
 }
-  #screen {
-    background-color: #499;
-    margin: 5px;
-    display: fixed;
-    padding: 100px;
-  }
-  #Q {
-    background-color: white;
-    border-color: white;
-    border-radius: 10px;
-    padding: 15px;
-  }
-  fieldset {
-    background-color: white;
-    border-color: black;
-    border-radius:10px;
-    
-  }
-  #v {
-    color: white;
-    margin: 0px;
-  }
-#op {
-background-color:orange;
+
+/* Header/Blog Title */
+h2 {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
 }
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+#a {
+  display: inline-block;
+  background-color:#aaa;
+  color: white;
+  padding: 10px;
+  border: 4px double #cccccc; /
+  border-radius: 10px; /* add this line */
+  font-size: 9px; /* add this line */
+}
+:focus {
+  outline: #08f auto 2px;
+}
+
+
+#gg {
+  min-width: px;
+  min-height: px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: ;
+  color: #313133;
+  background: purple;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+#gg::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+#gg:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+
+
+
+
+
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+
+Resources
 </style>
 <title>MEKO.SERVER.SIGNAL.JS</title>
 <html>
   <body>
     <h2 id="v">MEKO</h2>
-    <kbd id="v">v1.10.11</kbd>
-<figure> </figure>
-<p></p>
+    <kbd id="v">v1.11.26</kbd>
     <form id="screen">
-   <a id="Q" href="https://admin.google.com/ac/accountchooser" >Select Account</a> <a id="Q" href="https://docs.google.com/forms/d/e/1FAIpQLScnfcKUvSGo7e1U8lWONtAwDeiZ5SiVjQrQaLMFUwCWsV7iWA/viewform" >Post </a>
-
-<fieldset>
- <h3>florenz(👾CO-Owner👾)</h3>
-if you guys thinking what update will be.
-️ Fix Design,add more feature buttons,Bad words Filter,Fix Bugs,viruses Removed
-this is will be good fr☕
-<p>99.1K Likes:</p><input type="checkbox">
-   </fieldset>
-<fieldset>
- <h3>florenz(👾CO-Owner👾)</h3>
+   <a id="a" href="https://admin.google.com/ac/accountchooser">👤Select Account👤</a> <a id="a" href="https://docs.google.com/forms/d/e/1FAIpQLScnfcKUvSGo7e1U8lWONtAwDeiZ5SiVjQrQaLMFUwCWsV7iWA/viewform" >📰Post📰</a>
+   <a id="a" onclick="update()">🗓️New Update🗓️</a>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>florenz(👾CO-Owner👾)</h3>
+      <h5>Posted April 6, 2023</h5>
+<p>if you guys thinking what update will be. ️ Fix Design,add more feature buttons,Bad words Filter,Fix Bugs,viruses Removed this is will be good fr☕</p>
+<div class="wrap">
+  <h2 id="gg">❤️99k</h2><h2 id="gg">⤵️76k</h2>
+</div>
+</div>
+    </div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>florenz(👾CO-Owner👾)</h3>
+      <h5>Posted April 6, 2023</h5>
 <p>hello everyone the update is almost done! wait for few hours to update i hope you all guys enjoy! Thanks!</p>
- <p>101.3K Likes:</p><input type="checkbox">
-   </fieldset>
- <fieldset>
-    <h3>Oniwa(⚡Owner⚡)</h3>
-     <p>We Working a huge revamp and add more features to the app, And we Fix every bugs. please wait until we finish the job, Thank you for all meko user for supports, thank you and be safe😊 </p>
-     <p>97.3K Likes:</p><input type="checkbox">
-   </fieldset>
-<fieldset>
-    <h3>florenz(👾CO-Owner👾)</h3>
-     <p>good morning guys</p>
-     <p>68.4K Likes:</p><input type="checkbox">
-   </fieldset>
-<fieldset>
-    <h3>KabiKabi233</h3>
-     <p>Im welcome here??? Like if yes</p>
-     <p>65.3K Likes:</p><input type="checkbox">
-</fieldset>
-
-
-<fieldset>
-   <h3>FerChan</h3>
-     <p>Hi im New</p>
-     <p>37.1K Likes:</p><input type="checkbox">
-   </fieldset>
-<fieldset>
-   <h3>Sargettt</h3>
-     <p>Guys someone notice that every Oniwa post a new update came</p>
-     <p>30.6K Likes:</p><input type="checkbox">
-   </fieldset>
-  <fieldset>
-    <h3>florenz(👾CO-Owner👾)</h3>
-     <p>Hi klien!</p>
-     <p>29K Likes:</p><input type="checkbox">
-   </fieldset>
-  <fieldset>
-    <h3>Oniwa(⚡Owner⚡)</h3>
-     <p>my staff is lazy</p>
-     <p>27.1K Likes:</p><input type="checkbox">
-   </fieldset>
-<fieldset>
-    <h3>David(Bot)</h3>
-     <p>Hello Users Like the post if want more features</p>
-     <p>20.2K Likes:</p><input type="checkbox">
-<kbd></kbd>
-   </fieldset>
-  <fieldset>
-    <h3>SPAIN(⭐TIKTOK STAR⭐)</h3>
-     <p>Guys visit spain </p>
-     <p>17.2K Likes:</p><input type="checkbox">
-   </fieldset>
-   <fieldset>
-    <h3>Stary</h3>
-     <p>Hello why i need to refresh so i can see the new post </p>
-     <p>15.2K Likes:</p><input type="checkbox">
-   </fieldset>
-      <fieldset>
-    <h3>Oniwa(⚡Owner⚡)</h3>
-     <p>Next update is Soon </p>
-     <p>16.7K Likes:</p><input type="checkbox">
-   </fieldset>
-      <fieldset>
-    <h3>Stary</h3>
-     <p>Server low</p>
-     <p>9.2K Likes:</p><input type="checkbox">
-   </fieldset>
-   <fieldset>
-    <h3>Jayden</h3>
-     <p>Guys Like if you want new update of meko </p>
-     <p>10.5K Likes:</p><input type="checkbox">
-   </fieldset>
-   <fieldset>
-    <h3>Oniwa(⚡Owner⚡)</h3>
-     <p>We have new Staff Introduce @florenz </p>
-     <p>1K Likes:</p><input type="checkbox">
-   </fieldset>
-<fieldset>
-    <h3>jamal69</h3>
-     <p>Hello</p>
-     <p>15k Likes:</p><input type="checkbox">
-   </fieldset>
-<fieldset>
-    <h3>Gayunda569</h3>
-     <p>hello po</p>
-     <p>2K Likes:</p><input type="checkbox">
-   </fieldset>
-   <fieldset>
-    <h3>Jayat Gaming(⭐TIKTOK STAR⭐)</h3>
-     <p>Oke</p>
-     <p>14.3K Likes:</p><input type="checkbox">
-   </fieldset>
-   <fieldset>
-    <h3>Saanjin(⭐TIKTOK STAR⭐)</h3>
-     <p>Mga Adik</p>
-     <p>11.8K Likes:</p><input type="checkbox">
-   </fieldset>
-   <fieldset>
-    <h3>USA</h3>
-     <p>Nah we need oil </p>
-     <p>16.3K Likes:</p><input type="checkbox">
-   </fieldset>
-   <fieldset>
-    <h3>Zeke Aot</h3>
-     <p>April fools <a href="">youtube.Meko.com</a></p>
-     <p>19.2K Likes:</p><input type="checkbox">
-   </fieldset>
-   <fieldset>
-    <h3>florenz(👾CO-Owner👾)</h3>
-     <p>Hello</p>
-     <p>5.8K Likes:</p><input type="checkbox">
-   </fieldset>
-<fieldset>
-    <h3>BeDado27(✍️MODELER✍️)</h3>
-     <p>me tired</p>
-     <p>26.3K Likes:</p><input type="checkbox">
-   </fieldset>
-   </form>
+<div class="wrap">
+  <h2 id="gg">❤️101.3k</h2><h2 id="gg">⤵️90.2k</h2>
+</div>
+</div>
+    </div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>Oniwa(⚡Owner⚡)</h3>
+      <h5>Posted April 5, 2023</h5>
+      <p>We Working a huge revamp and add more features to the app, And we Fix every bugs. please wait until we finish the job, Thank you for all meko user for supports, thank you and be safe😊</p>
+<div class="wrap">
+  <h2 id="gg">❤️99.3k</h2><h2 id="gg">⤵️34.3K </h2>
+</div>
+</div>
+    </div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>florenz(👾CO-Owner👾)</h3>
+      <h5>Posted April 6, 2023</h5>
+      <p>good morning guys</p>
+<div class="wrap">
+  <h2 id="gg">❤️63.7k</h2><h2 id="gg">⤵️12.3K </h2>
+</div>
+</div>
+    </div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>KabiKabi233</h3>
+      <h5>Posted April 2, 2023</h5>
+      <p>im welcome here???</p>
+<div class="wrap">
+  <h2 id="gg">❤️10.2k</h2><h2 id="gg">⤵️1k</h2>
+</div>
+</div>
+    </div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>Kadacraft</h3>
+      <h5>Posted April 6 2023</h5>
+      <p>Hello guys if you wondering why Kadacraft members dont post kada vids. beacuse They Done playing with kadacrafts so dont wonder, Thank you bye</p>
+<div class="wrap">
+  <h2 id="gg">❤️7.4k</h2><h2 id="gg">⤵️7k </h2>
+</div>
+</div>
+    </div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>Hange💅</h3>
+      <h5>Posted April 6, 2023</h5>
+      <p>My Cat is spolied who have a cat that is very spolied. The ****</p>
+      <kbd style="color:red;">!Words Blocked!</kbd>
+<div class="wrap">
+  <h2 id="gg">❤️10.2k</h2><h2 id="gg">⤵️1k</h2>
+</div>
+</div>
+    </div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>∆🐞Im Bug🐞∆</h3>
+      <h5>Posted April 6, 2023</h5>
+      <p>Bro my life is a lie
+      <a href="">#MPG</a></p>
+<div class="wrap">
+  <h2 id="gg">❤️45.9k</h2><h2 id="gg">⤵️1k</h2>
+</div>
+</div>
+    </div>
+️ 
+    
+    
   </body>
 </html>
 <script>
-alert("New Update🤡:April Fools update.")
-confirm("tip📝:swipe side and click refresh button to see new post📝")
-confirm("🥳HAPPY 100K Downloads!!🥳 Event Ended")
+function update() {
+  console.log("internet connecting to server")
+  console.log("Downloading Data.js")
+  confirm("New Update:🗓️ Fix Design,add more feature buttons,Bad words Filter,Fix Bugs,viruses Removed")
+}
 console.log("console.image_meko_saved-ControlWeb")
 console.log("Staff.commands_file_web.CoBuild")
 console.error("Something went wrong during File Recrpting.")
-
 console.log("Setting up file...")
 console.log("Downloading 234KB server nodes item")
 console.log("Node.js Downloading ...")
