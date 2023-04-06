@@ -123,7 +123,42 @@ content: '';
 #gg:hover::before, button:focus::before {
   opacity: 1;
 }
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333333;
+  transition: opacity 0.75s, visibility 0.75s;
+}
 
+.loader--hidden {
+  opacity: 10;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #dddddd;
+  border-top-color: #009578;
+  border-radius: 50%;
+  animation: loading 9.56s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
 
 
 
@@ -142,6 +177,7 @@ Resources
 <title>MEKO.SERVER.SIGNAL.JS</title>
 <html>
   <body>
+<div class="loader"></div>
     <h2 id="v">MEKO</h2>
     <kbd id="v">v1.11.26</kbd>
     <form id="screen">
@@ -253,6 +289,15 @@ Resources
   </body>
 </html>
 <script>
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader--hidden");
+
+  loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loader);
+  });
+});
 function update() {
   console.log("internet connecting to server")
   console.log("Downloading Data.js")
