@@ -1,650 +1,175 @@
 <style>
-html {
-  box-sizing: border-box;
-margin:0px;
+body {
+  font-family: Arial,sans-serif;
+  color: #292f33;
 }
 
-form {
-  font-family: Arial;
-  padding: 100px;
-  background: #f1f1f1;
+/* This element would be replaced by where you want the templates. */
+.tweetEntry-tweetHolder {
+  border-left: 1px solid #e1e8ed;
+  border-right: 1px solid #e1e8ed;
+  border-top: 1px solid #e1e8ed;
+  width: 588px;
+  margin: auto;
+  border-radius: 5px;
 }
 
-/* Header/Blog Title */
-h2 {
-  padding: 30px;
-  font-size: 40px;
-  text-align: center;
-  background: white;
+/* The action list is optional. */
+.tweetEntry-action-list {
+  display: block;
+  line-height: 18px;
+  margin-left: 58px;
+  margin-top: 10px;
+  color: #292f33;
 }
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {
-  float: left;
-  width: 75%;
+.fa-reply:hover {
+  color: red;
 }
-
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
+.fa-retweet:hover {
+  color: green;
 }
-
-
-
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
+.fa-heart:hover {
+  color: #ff3333;
 }
+/************************/
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {
-    width: 100%;
-    padding: 0;
-  }
-}
-#a {
-  display: inline-block;
-  background-color:#aaa;
-  color: white;
-  padding: 10px;
-  border: 4px double #cccccc; /
-  border-radius: 10px; /* add this line */
-  font-size: 9px; /* add this line */
-}
-:focus {
-  outline: #08f auto 2px;
-}
-
-
-#gg {
-  min-width: px;
-  min-height: px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  font-weight: ;
-  color: #313133;
-  background: purple;
-background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
-  border: none;
-  border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-  transition: all 0.3s ease-in-out 0s;
+.tweetEntry {
+  border-bottom: 1px solid #e1e8ed;
   cursor: pointer;
-  outline: none;
-  position: relative;
-  padding: 10px;
-  }
-
-#gg::before {
-content: '';
-  border-radius: 1000px;
-  min-width: calc(300px + 12px);
-  min-height: calc(60px + 12px);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: all .3s ease-in-out 0s;
+  min-height: 51px;
+  padding: 9px 12px;
+}
+.tweetEntry-content {
+display: block;
+  font-size: 14px;
+  margin-left: 58px;
+  font-size: 14px;
+}
+.tweetEntry-account-group {
+  color: #8899a6;
+  padding: 0px;
+  text-decoration: none;
+  line-height: 20px;
+}
+.tweetEntry-avatar {
+  float: left;
+  height: 48px;
+  width: 48px;
+  margin-left: -58px;
+  border-radius: 5px;
+}
+.tweetEntry-fullname {
+  font-weight: bold;
+  font-size: 14px;
+  color: #292f33;
+  padding: 0px;
+}
+.tweetEntry-username {
+  font-weight: bold;
+  font-size: 14px;
+  color: #b1bbc3;
+  padding: 0px;
+}
+.tweetEntry-timestamp {
+  font-size: 14px;
+  color: #b1bbc3;
+  padding: 0px;
+}
+.tweetEntry-text-container {
+  font-size: 14px;
+  color: #292f33;
+  line-height: 18px;
 }
 
-.button:hover, .button:focus {
-  color: #313133;
-  transform: translateY(-6px);
+.optionalMedia {
+  margin-left: 58px;
+  margin-top: 10px;
+}
+.optionalMedia-img {
+  border-radius: 5px;
+  max-width: 506px;
+  max-height: 506px;
+  
 }
 
-#gg:hover::before, button:focus::before {
-  opacity: 1;
-}
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #333333;
-  transition: opacity 50.75s, visibility 0.75s;
-}
-
-.loader--hidden {
-  opacity: 10;
-  visibility: hidden;
-}
-
-.loader::after {
-  content: "";
-  width: 75px;
-  height: 75px;
-  border: 15px solid #dddddd;
-  border-top-color: #009578;
-  border-radius: 50%;
-  animation: loading 190.56s ease infinite;
-}
-
-@keyframes loading {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-
-
-
-
-  100% {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
-  }
-}
-
-
-Resources
 </style>
-<title>MEKO.SERVER.SIGNAL.JS</title>
-<html>
-  <body>
-<div class="loader"></div>
-    <h2 id="v">MEKO</h2>
-    <kbd id="v">v1.11.26</kbd>
-    <form id="screen">
-   <a id="a" href="https://admin.google.com/ac/accountchooser">👤Select Account👤</a> <a id="a" href="https://docs.google.com/forms/d/e/1FAIpQLScnfcKUvSGo7e1U8lWONtAwDeiZ5SiVjQrQaLMFUwCWsV7iWA/viewform" >📰Post📰</a>
-   <a id="a" onclick="update()">🗓️New Update🗓️</a>
-<a id="a" href="https://msha.ke/feirserx#meko">💎Buy Premuim💎</a>
-<form>
+<div class="tweetEntry-tweetHolder">
+<h1 class="tweetEntry" style="margin-bottom:0px;">MEKO</h1>
+<!---------------------------------------->
 
-
-
-
-<fieldset>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>florenz(👾CO-Owner👾)<h5>
-      Posted April 8, 2023</h5>
-<p>Hi Guys we have a update because oniwa said to me that there 40% chance to shut down the server on april 12 the reason is <a href="">@oniwa</a> find out theres script virus to this app and he trying to solve it..
-BUT dont panic becauce it wint affect on your emails,personalities,etc.
-thats all i know and stay safe😁 Thanks!</p>
-<div class="wrap">
-  <h2 id="gg">❤️200.8k</h2><h2 id="gg">⤵️99.5k</h2>
 </div>
-</div>
-
-<fieldset>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>frosty (💎Premuim💎)<h5>
-      Posted April 8, 2023</h5>
-<p>
-Eyyyyyyyyy premuim
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️18.3k</h2><h2 id="gg">⤵️5k</h2
- <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Gavin(🧑‍💻STAFF🧑‍💻)<h5>
-      Posted April 8, 2023</h5>
-<p>
-Me when i got 200k likes in meko
-</p>
-<img src="file.jpg.jpeg" style="width="300px" height="200px">
-<div class="wrap">
-  <h2 id="gg">❤️189.3k</h2><h2 id="gg">⤵️50.3k</h2>
-</div>
-</div>
+<div class="tweetEntry"></div>
+  <div class="tweetEntry-content">
+    <a class="tweetEntry-account-group" href="[accountURL]">
+      <strong class="tweetEntry-fullname">
+  <bold>(CO-OWNER)</bold>florenz •
+      </strong>
+      <span class="tweetEntry-username">
+        @<b>User10 •</b>
+      </span>
+      <span class="tweetEntry-timestamp">April 8, 2023</span>
+    </a>
+    <div class="tweetEntry-text-container">
+Hi Guys we have a update because oniwa said to me that there 40% chance to shut down the server on april 12 the reason is <a href="">@oniwa</a> find out theres script virus to this app and he trying to solve it.. BUT dont panic becauce it wint affect on your emails,personalities,etc. thats all i know and stay safe😁 Thanks!
     </div>
-    <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Yo_Mom</h3>
-      <h5>Posted April 8, 2023</h5>
-<p>
-When you hashtag this it gives you a warning <a>#9090599</a>
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️92.6k</h2><h2 id="gg">⤵️1.4k</h2>
+    
+  </div>
+ 
+  
+  <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+    <i class="fa fa-reply" style="width: 80px;">200K LIKES</i>
+    <i class="fa fa-retweet" style="width: 80px"> 120.5K SHARES</i>
+    <i class="fa fa-heart" style="width: 80px"></i>
+  </div>
+  
 </div>
-</div>
+<div class="tweetEntry"></div>
+  <div class="tweetEntry-content">
+    <a class="tweetEntry-account-group" href="[accountURL]">
+      <strong class="tweetEntry-fullname">
+  <bold>(Premuim)</bold>opnam •
+      </strong>
+      <span class="tweetEntry-username">
+        @<b>User220 •</b>
+      </span>
+      <span class="tweetEntry-timestamp">April 8, 2023</span>
+    </a>
+    <div class="tweetEntry-text-container">
+Meko refresh server
     </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>SCP</h3>
-      <h5>Posted April 8, 2023</h5>
-<p>
-The Smile dog <a href="" >@#mekpage</a>
-</p>
-<img src="error.jpg" style="width: 300px; height:200;" 
-<div class="wrap">
-  <h2 id="gg">❤️26k</h2><h2 id="gg">⤵️1.9k</h2>
+    
+  </div>
+ 
+  
+  <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+    <i class="fa fa-reply" style="width: 80px;">120.9K LIKES</i>
+    <i class="fa fa-retweet" style="width: 80px"> 12.7K SHARES</i>
+    <i class="fa fa-heart" style="width: 80px"></i>
+  </div>
+  
 </div>
-</div>
+<div class="tweetEntry"></div>
+  <div class="tweetEntry-content">
+    <a class="tweetEntry-account-group" href="[accountURL]">
+      <strong class="tweetEntry-fullname">
+  <bold></bold>dgg •
+      </strong>
+      <span class="tweetEntry-username">
+        @<b>User3 •</b>
+      </span>
+      <span class="tweetEntry-timestamp">April 9, 2023</span>
+    </a>
+    <div class="tweetEntry-text-container">
+GOOD NIGJT 
     </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>captainclockwork(⭐TIKTOK STAR⭐)</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-Thank you for supporting guys
-</p>
-<img src="Screenshot_2023-04-07-14-48-31-12_50ef9f5a0f3fc24b6f0ffc8843167fe4.jpg" style="width="300px" height="200px">
-<div class="wrap">
-  <h2 id="gg">❤️20.1k</h2><h2 id="gg">⤵️15.2k</h2>
+    
+  </div>
+ 
+  
+  <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+    <i class="fa fa-reply" style="width: 80px;">45K LIKES</i>
+    <i class="fa fa-retweet" style="width: 80px"> 10.5K SHARES</i>
+    <i class="fa fa-heart" style="width: 80px"></i>
+  </div>
+  
 </div>
-</div>
-    </div>
-    <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>BroSheat</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-😏.  <a>@Ereh</a>
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️67.3k</h2><h2 id="gg">⤵️14k</h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>florenz(👾CO-Owner👾)</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>testing new update of meko! you can post now a pictures but you need to log in your gmail for the security!! thanks!</p>
- <img style="width:300px; height:200px;" src="FB_IMG_1679703640672 - florenz dichos.jpg">
-<p>✨Viral✨</p>
-<div class="wrap">
-  <h2 id="gg">❤️148.1k</h2><h2 id="gg">⤵️100k</h2>
-</div>
-</div>
-
-
-
-
-
-
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>florenz(👾CO-Owner👾)</h3>
-      <h5>Posted April 7, 2023</h5>
-the who wishing to be staff.
-sorry i dont care because only @oniwa will make decisions who will become staff lol💀
- <div class="wrap">
-  <h2 id="gg">❤️13k</h2><h2 id="gg">⤵️10k</h2>
-</div>
-</div>
-
-
-
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>SAGONIS</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-<a href=" " >@florenz</a> make me staff im a girl btw:)
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️19.3k</h2><h2 id="gg">⤵️8k</h2>
-</div>
-</div>
-    </div>
-    <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>DragonOiu89</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-Bro ban simps <a href="" >#BannedSimps</a>
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️9k</h2><h2 id="gg">⤵️5.3k</h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>akosifred</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-my bounty is low:( <a href="" >#bloxfruit</a>
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️51k</h2><h2 id="gg">⤵️1.4k</h2>
-</div>
-</div>
-    </div>
-   <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>🦹BoBo</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-Hello mga bobo ako gwapo
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️44k</h2><h2 id="gg">⤵️9.5k</h2>
-</div>
-</div>
-    </div>
-    <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3></h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-Hello User Can you like
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️109k</h2><h2 id="gg">⤵️77.4k</h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>florenz(👾CO-Owner👾)</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-who playing blox fruits? come play with me! add me user:bacon_me3211
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️132k</h2><h2 id="gg">⤵️88.2k</h2>
-</div>
-</div>
-    </div>
-    <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>florenz(👾CO-Owner👾)</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-test1:<a href=" ">#hashtag</a>
-test2:<a href=" ">@klien</a>
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️9k</h2><h2 id="gg">⤵️5.3k</h2>
-</div>
-</div>
-    </div>
- <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Brookie(🧑‍💻STAFF🧑‍💻)</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-Is 1:50AM I am still farming in blox fruit i think i need to touch grass O⁠_⁠o
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️130.4k</h2><h2 id="gg">⤵️116.8k</h2>
-</div>
-</div>
-    </div>
-    <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Stamina24_7</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-Who knows oniwa is my old classmate
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️29k</h2><h2 id="gg">⤵️1.5k</h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Dewannnmmmm</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-Palagi mo siya ci na chat pero nag bagu lahat 😆 sabi ni  <a href="" >@Brookie</a>
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️80.3k</h2><h2 id="gg">⤵️13k</h2>
-</div>
-</div>
-    </div>
-   <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>magicdino(🧑‍💻STAFF🧑‍💻)</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-100K Users in meko. But only one can like
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️1</h2><h2 id="gg">⤵️99.3k</h2>
-</div>
-</div>
-    </div>
-    <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Meko(🖥️Bot🖥️)</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-Hello User Can you like
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️109k</h2><h2 id="gg">⤵️77.4k</h2>
-</div>
-</div>
-    </div>
-    <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Mr Fround</h3>
-      <h5>Posted April 7, 2023</h5>
-<p>
-NAH MY BOI IS STRIPPING HAVE FAT *** HAHAHAHA <a href="">@JunTYYY10</a>
-</p>
-<p style="color: red;">!WARNING:BLOCKED WORDS!</p>
-<div class="wrap">
-  <h2 id="gg">❤️33k</h2><h2 id="gg">⤵️3k</h2>
-</div>
-</div>
-    </div>
- <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Jenural(⭐TIKTOK STAR⭐)</h3>
-      <h5>Posted April 6, 2023</h5>
-<p>Dear fans,
-
-As my time comes to an end, I want to express my heartfelt gratitude for your unwavering support and loyalty. Your encouragement and kind words have been a constant source of inspiration for me, and I am humbled by the impact that I have had on your lives.
-As I bid farewell, I urge you to continue pursuing your dreams with passion and determination. Remember that the only limit to what you can achieve is the limit you place on yourself.
-Thank you for being a part of my journey, and I wish you all the best in your future endeavors.
-</p>
-<div class="wrap">
-  <h2 id="gg">❤️129k</h2><h2 id="gg">⤵️102.3k</h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>florenz(👾CO-Owner👾)</h3>
-      <h5>Posted April 6, 2023</h5>
-<p>did you all guys like the update? like if you do!</p>
-<div class="wrap">
-  <h2 id="gg">❤️91.5k</h2><h2 id="gg">⤵️23.4k</h2>
-</div>
-</div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>florenz(👾CO-Owner👾)</h3>
-      <h5>Posted April 6, 2023</h5>
-<p>if you guys thinking what update will be. ️ Fix Design,add more feature buttons,Bad words Filter,Fix Bugs,viruses Removed this is will be good fr☕</p>
-<div class="wrap">
-  <h2 id="gg">❤️99k</h2><h2 id="gg">⤵️76k</h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>florenz(👾CO-Owner👾)</h3>
-      <h5>Posted April 6, 2023</h5>
-<p>hello everyone the update is almost done! wait for few hours to update i hope you all guys enjoy! Thanks!</p>
-<div class="wrap">
-  <h2 id="gg">❤️101.3k</h2><h2 id="gg">⤵️90.2k</h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Oniwa(⚡Owner⚡)</h3>
-      <h5>Posted April 5, 2023</h5>
-      <p>We Working a huge revamp and add more features to the app, And we Fix every bugs. please wait until we finish the job, Thank you for all meko user for supports, thank you and be safe😊</p>
-<div class="wrap">
-  <h2 id="gg">❤️99.3k</h2><h2 id="gg">⤵️34.3K </h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>florenz(👾CO-Owner👾)</h3>
-      <h5>Posted April 6, 2023</h5>
-      <p>good morning guys</p>
-<div class="wrap">
-  <h2 id="gg">❤️63.7k</h2><h2 id="gg">⤵️12.3K </h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>KabiKabi233</h3>
-      <h5>Posted April 2, 2023</h5>
-      <p>im welcome here???</p>
-<div class="wrap">
-  <h2 id="gg">❤️10.2k</h2><h2 id="gg">⤵️1k</h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Kadacraft</h3>
-      <h5>Posted April 6 2023</h5>
-      <p>Hello guys if you wondering why Kadacraft members dont post kada vids. beacuse They Done playing with kadacrafts so dont wonder, Thank you bye</p>
-<div class="wrap">
-  <h2 id="gg">❤️7.4k</h2><h2 id="gg">⤵️7k </h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Hange💅</h3>
-      <h5>Posted April 6, 2023</h5>
-      <p>My Cat is spolied who have a cat that is very spolied. The ****</p>
-      <kbd style="color:red;">!WARNING:BLOCKED WORDS!</kbd>
-<div class="wrap">
-  <h2 id="gg">❤️10.2k</h2><h2 id="gg">⤵️1k</h2>
-</div>
-</div>
-    </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>∆🐞Im Bug🐞∆</h3>
-      <h5>Posted April 6, 2023</h5>
-      <p>Bro my life is a lie
-      <a href="">#MPG</a></p>
-<div class="wrap">
-  <h2 id="gg">❤️45.9k</h2><h2 id="gg">⤵️1k</h2>
-</div>
-</div>
-    </div>
-️ <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h3>Gavin(🧑‍💻STAFF🧑‍💻)</h3>
-      <h5>Posted April 6, 2023</h5>
-      <p>Like if you love this update
-<div class="wrap">
-  <h2 id="gg">❤️74k</h2><h2 id="gg">⤵️56.3k</h2>
-</div>
-</div>
-    </div>
-</fieldset>   
-    </form>
-  </body>
-</html>
-<script>
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader");
-
-  loader.classList.add("loader--hidden");
-
-  loader.addEventListener("transitionend", () => {
-    document.body.removeChild(loader);
-  });
-});
-function update() {
-  console.log("internet connecting to server")
-  console.log("Downloading Data.js")
-  confirm("New Update:🗓️ Fix Design,add more feature buttons,Bad words Filter,Fix Bugs,viruses Removed")
-}
-confirm("TIP:SWIPE LEFT SIDE AND CLICK REFRESH TO SEE NEW POST OR UPDATES")
-console.log("console.image_meko_saved-ControlWeb")
-console.log("Staff.commands_file_web.CoBuild")
-console.error("Something went wrong during File Recrpting.")
-console.log("Setting up file...")
-console.log("Downloading 234KB server nodes item")
-console.log("Node.js Downloading ...")
-console.info("Signal.com Server is Running....")
-var userId = "UserOne";
-var userId2 = "UserTwo";
-var userId3 = "UserThree";
-
-console.log("Console log"+ " 383783" +  userId)
-
-console.info("Console info" + " 383728" +  userId2);
-
-console.debug("Console debug" + " 392838" +  userId3);
-for (i = 10; i <= 25; i++){
-  console.count("User://Login_File.saved_Loaded.js ")
-}
-      
-</script>
